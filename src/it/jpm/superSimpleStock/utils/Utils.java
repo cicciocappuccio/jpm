@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class Utils {
 
-	public static Double readDouble(String label) {
+	public static Double readDouble(String label, boolean acceptZero) {
 		BufferedReader br = null;
 
 		br = new BufferedReader(new InputStreamReader(System.in));
@@ -23,17 +23,26 @@ public class Utils {
 		do {
 
 			System.out.println(label);
-
+			String error = "";
 			try {
 				input = br.readLine();
 				inputF = Double.parseDouble(input);
+				if (inputF < 0.0d) {
+					error = "the input must be a number (positive)";
+					throw new NumberFormatException();
+				}
 				isValid = true;
 
+				if (!acceptZero && inputF == 0.0d) {
+					error = "the input must be a number (positive and not 0))";
+
+					throw new NumberFormatException();
+				}
 			} catch (NullPointerException e1) {
 				System.out.println("the input can't be null");
 				isValid = false;
 			} catch (NumberFormatException e2) {
-				System.out.println("the input must be a number");
+				System.out.println(error);
 				isValid = false;
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -45,7 +54,7 @@ public class Utils {
 		return inputF;
 	}
 
-	public static Integer readInteger(String label) {
+	public static Integer readInteger(String label, boolean acceptZero) {
 		BufferedReader br = null;
 
 		br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,10 +70,16 @@ public class Utils {
 			try {
 				input = br.readLine();
 				inputI = Integer.parseInt(input);
+				if (inputI < 0)
+					throw new NumberFormatException();
+				if (!acceptZero && inputI == 0)
+					throw new NumberFormatException();
+
 				isValid = true;
 
 			} catch (NumberFormatException e2) {
-				System.out.println("the input must be an integer");
+				System.out
+						.println("the input must be an integer (positive and not 0)");
 				isValid = false;
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -99,18 +114,18 @@ public class Utils {
 		Integer input = null;
 		System.out.println(label);
 		for (StockType i : StockType.values()) {
-			System.out.println(i.ordinal() + " - " + i.name());
+			System.out.println((i.ordinal() + 1) + " - " + i.name());
 		}
 
 		boolean isValid = true;
 
 		do {
 
-			input = readInteger("type the number of your choice");
+			input = readInteger("type the number of your choice", false);
 
-			if (StockType.COMMON.ordinal() == input)
+			if ((StockType.COMMON.ordinal() + 1) == input)
 				return StockType.COMMON;
-			else if (StockType.PREFERRED.ordinal() == input)
+			else if ((StockType.PREFERRED.ordinal() + 1) == input)
 				return StockType.PREFERRED;
 			else {
 				isValid = false;
@@ -124,18 +139,18 @@ public class Utils {
 		Integer input = null;
 		System.out.println(label);
 		for (TradeType i : TradeType.values()) {
-			System.out.println(i.ordinal() + " - " + i.name());
+			System.out.println((i.ordinal() + 1) + " - " + i.name());
 		}
 
 		boolean isValid = true;
 
 		do {
 
-			input = readInteger("type the number of your choice");
+			input = readInteger("type the number of your choice", false);
 
-			if (TradeType.PURCHASING.ordinal() == input)
+			if ((TradeType.PURCHASING.ordinal() + 1) == input)
 				return TradeType.PURCHASING;
-			else if (TradeType.SELLING.ordinal() == input)
+			else if ((TradeType.SELLING.ordinal() + 1) == input)
 				return TradeType.SELLING;
 			else {
 				isValid = false;
@@ -145,22 +160,22 @@ public class Utils {
 		return null;
 	}
 
-	public static Integer mainMenu(String label) {
-		System.out.println(label);
-		Integer input = null;
-		boolean isValid = true;
-		do {
-
-			input = readInteger("type the number of your choice");
-
-			/*
-			 * if (TradeType.PURCHASING.ordinal() == input) return
-			 * TradeType.PURCHASING; else if (TradeType.SELLING.ordinal() ==
-			 * input) return TradeType.SELLING; else isValid = false;
-			 */} while (!isValid);
-
-		return 0;
-	}
+	// public static Integer mainMenu(String label) {
+	// System.out.println(label);
+	// Integer input = null;
+	// boolean isValid = true;
+	// do {
+	//
+	// input = readInteger("type the number of your choice");
+	//
+	// /*
+	// * if (TradeType.PURCHASING.ordinal() == input) return
+	// * TradeType.PURCHASING; else if (TradeType.SELLING.ordinal() ==
+	// * input) return TradeType.SELLING; else isValid = false;
+	// */} while (!isValid);
+	//
+	// return 0;
+	// }
 
 	public static Stock selectStock(String label, Set<Stock> stocks) {
 
@@ -177,7 +192,7 @@ public class Utils {
 		boolean isValid = true;
 		do {
 
-			input = Utils.readInteger("type the number of your choice");
+			input = Utils.readInteger("type the number of your choice", false);
 
 			if (input > 0 && input <= i) {
 				isValid = true;

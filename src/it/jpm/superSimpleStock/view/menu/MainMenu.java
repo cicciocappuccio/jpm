@@ -20,7 +20,7 @@ public class MainMenu extends Menu {
 				this, controller)));
 		this.put(4, new MenuItem("GBCE statistics", false, new GBCEStatMenu(
 				this, controller)));
-		this.put(5, new MenuItem("exit", true, new Exit(null, controller)));
+		this.put(5, new MenuItem("exit", true, new Exit()));
 
 	}
 

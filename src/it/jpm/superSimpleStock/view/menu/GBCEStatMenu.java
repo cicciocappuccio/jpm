@@ -10,7 +10,7 @@ public class GBCEStatMenu extends Menu{
 		super("GBCEStatMenu", parent, controller);
 
 		this.put(1, new MenuItem("Calculate the GBCE All Share Index", true, new GBCEIndex(controller)));
-		this.put(2, new MenuItem("exit", true, new Exit(parent, controller)));
+		this.put(2, new MenuItem("exit", true, new Exit()));
 
 	}
 

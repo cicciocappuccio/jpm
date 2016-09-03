@@ -12,9 +12,11 @@ public class RecordTrade implements Activity {
 
 	private Activity parent;
 	private Controller controller;
+
 	public RecordTrade(Activity parent, Controller controller) {
 		this.parent = parent;
-		this.controller = controller;	}
+		this.controller = controller;
+	}
 
 	@Override
 	public int showActivity() {
@@ -25,20 +27,24 @@ public class RecordTrade implements Activity {
 	public void execute() {
 		System.out.println("Record a trade");
 
-		
 		Stock stock = Utils.selectStock("Select stock", controller.getStocks());
 
 		Date date = new Date();
-		
-		Integer quantity = Utils.readInteger("Type the quantity of the trade (integer)");
-		
+
+		Integer quantity = Utils.readInteger(
+				"Type the quantity of the trade (integer)", false);
+
 		TradeType tt = Utils.readTradeType("Select the tipe of trade");
-		
-		double price = Utils.readDouble("Type the price of the trade (double value, value of the single stock)");
+
+		double price = Utils
+				.readDouble(
+						"Type the price of the trade (double value, value of the single stock)",
+						false);
 		controller.recordTrade(stock, date, quantity, tt, price, parent);
 		stock.setTickerPrice(price);
-		System.out.println("trade recored!\n--------------------------------------------------------------------------------");
-		
+		System.out
+				.println("trade recored!\n--------------------------------------------------------------------------------");
+
 	}
-	
+
 }

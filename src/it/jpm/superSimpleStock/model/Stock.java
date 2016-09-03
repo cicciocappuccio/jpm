@@ -2,6 +2,17 @@ package it.jpm.superSimpleStock.model;
 
 public class Stock {
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Stock [stockSymbol=" + stockSymbol + ", type=" + type.toString()
+				+ ", lastDividend=" + lastDividend + ", fixedDividend="
+				+ fixedDividend + ", parValue=" + parValue + ", tickerPrice="
+				+ tickerPrice + "]";
+	}
+
 	private String stockSymbol;
 	private StockType type;
 	private double lastDividend;

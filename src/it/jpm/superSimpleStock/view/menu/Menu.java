@@ -104,7 +104,7 @@ public class Menu extends HashMap<Integer, MenuItem> implements Activity {
 
 		do {
 
-			input = Utils.readInteger("type the number of your choice");
+			input = Utils.readInteger("type the number of your choice", false);
 
 			if (this.containsKey(input) && get(input).isActive())
 				return input;

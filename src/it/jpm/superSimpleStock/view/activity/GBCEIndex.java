@@ -1,8 +1,6 @@
 package it.jpm.superSimpleStock.view.activity;
 
 import it.jpm.superSimpleStock.controller.Controller;
-import it.jpm.superSimpleStock.model.Stock;
-import it.jpm.superSimpleStock.utils.Utils;
 import it.jpm.superSimpleStock.view.Activity;
 
 public class GBCEIndex implements Activity {

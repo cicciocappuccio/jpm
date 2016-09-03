@@ -5,6 +5,16 @@ import java.util.Date;
 //iii. record a trade, with timestamp, quantity of shares, buy or sell indicator and price
 public class Trade {
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Trade [stock=" + stock + ", timestamp=" + timestamp
+				+ ", quantity=" + quantity + ", type=" + type.toString() + ", price="
+				+ price + "]";
+	}
+
 	private Stock stock;
 	private Date timestamp;
 	private int quantity;

@@ -29,13 +29,13 @@ public class AddStock implements Activity {
 				.readStockType("What type of stock do you want to add?");
 
 		Double lastDividend = Utils
-				.readDouble("type the last dividend of the stock");
+				.readDouble("type the last dividend of the stock", true);
 		
 		Double fixedDividend = 0.0d;
 		if (type == StockType.PREFERRED)
-			fixedDividend = Utils.readDouble("type the fixed dividend in % (integer)");
+			fixedDividend = Utils.readDouble("type the fixed dividend in % (integer)",true);
 		
-		Double parValue = Utils.readDouble("type the Par Value of the stock");
+		Double parValue = Utils.readDouble("type the Par Value of the stock",false);
 		
 		controller.addStock(stock, type, lastDividend, fixedDividend, parValue, parent);
 		

@@ -7,7 +7,6 @@ import it.jpm.superSimpleStock.model.TradeType;
 import it.jpm.superSimpleStock.view.Activity;
 import it.jpm.superSimpleStock.view.menu.Menu;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
