@@ -1,9 +1,9 @@
 package it.jpm.superSimpleStock.view.menu;
 
 import it.jpm.superSimpleStock.controller.Controller;
+import it.jpm.superSimpleStock.model.TradeType;
 import it.jpm.superSimpleStock.utils.Utils;
 import it.jpm.superSimpleStock.view.Activity;
-import it.jpm.superSimpleStocks.model.TradeType;
 
 import java.util.HashMap;
 

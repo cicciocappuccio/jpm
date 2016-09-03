@@ -1,6 +1,6 @@
 package it.jpm.superSimpleStock.view;
 
-import it.jpm.superSimpleStocks.model.Stock;
+import it.jpm.superSimpleStock.model.Stock;
 
 import java.util.Set;
 

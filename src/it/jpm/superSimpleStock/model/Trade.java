@@ -1,4 +1,4 @@
-package it.jpm.superSimpleStocks.model;
+package it.jpm.superSimpleStock.model;
 
 import java.util.Date;
 

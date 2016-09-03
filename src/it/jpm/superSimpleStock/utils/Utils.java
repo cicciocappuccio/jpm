@@ -1,8 +1,8 @@
 package it.jpm.superSimpleStock.utils;
 
-import it.jpm.superSimpleStocks.model.Stock;
-import it.jpm.superSimpleStocks.model.StockType;
-import it.jpm.superSimpleStocks.model.TradeType;
+import it.jpm.superSimpleStock.model.Stock;
+import it.jpm.superSimpleStock.model.StockType;
+import it.jpm.superSimpleStock.model.TradeType;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,11 +1,11 @@
 package it.jpm.superSimpleStock.controller;
 
+import it.jpm.superSimpleStock.model.Stock;
+import it.jpm.superSimpleStock.model.StockType;
+import it.jpm.superSimpleStock.model.Trade;
+import it.jpm.superSimpleStock.model.TradeType;
 import it.jpm.superSimpleStock.view.Activity;
 import it.jpm.superSimpleStock.view.menu.Menu;
-import it.jpm.superSimpleStocks.model.Stock;
-import it.jpm.superSimpleStocks.model.StockType;
-import it.jpm.superSimpleStocks.model.Trade;
-import it.jpm.superSimpleStocks.model.TradeType;
 
 import java.util.ArrayList;
 import java.util.Calendar;

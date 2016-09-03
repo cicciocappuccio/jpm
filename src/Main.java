@@ -1,7 +1,7 @@
 import it.jpm.superSimpleStock.controller.Controller;
+import it.jpm.superSimpleStock.model.Stock;
+import it.jpm.superSimpleStock.model.Trade;
 import it.jpm.superSimpleStock.view.menu.MainMenu;
-import it.jpm.superSimpleStocks.model.Stock;
-import it.jpm.superSimpleStocks.model.Trade;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,10 +1,10 @@
 package it.jpm.superSimpleStock.view.activity;
 
 import it.jpm.superSimpleStock.controller.Controller;
+import it.jpm.superSimpleStock.model.Stock;
+import it.jpm.superSimpleStock.model.TradeType;
 import it.jpm.superSimpleStock.utils.Utils;
 import it.jpm.superSimpleStock.view.Activity;
-import it.jpm.superSimpleStocks.model.Stock;
-import it.jpm.superSimpleStocks.model.TradeType;
 
 import java.util.Date;
 
